@@ -74,7 +74,6 @@ void BinarySearchTree::remove(int d)
 	curr = root;
 	while (curr != NULL)
 	{
-		cout << "hi" << endl;
 		if (curr->data == d)
 		{
 			found = true;
