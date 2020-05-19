@@ -49,7 +49,7 @@ void BinarySearchTree::insert(int d)
 		while (curr)
 		{
 			parent = curr;
-			if (t->data < curr->data) curr = curr->right;
+			if (t->data > curr->data) curr = curr->right;
 			else curr = curr->left;
 		}
 
@@ -74,6 +74,7 @@ void BinarySearchTree::remove(int d)
 	curr = root;
 	while (curr != NULL)
 	{
+		cout << "hi" << endl;
 		if (curr->data == d)
 		{
 			found = true;
@@ -214,7 +215,7 @@ void BinarySearchTree::preorder(tree_node* p)
 	if (p != NULL)
 	{
 		cout << " " << p->data << " ";
-		if (p->left) {} preorder(p->left);
+		if (p->left) preorder(p->left);
 		if (p->right) preorder(p->right);
 	}
 	else return;
@@ -227,7 +228,7 @@ void BinarySearchTree::print_postorder()
 
 void BinarySearchTree::postorder(tree_node* p)
 {
-	if (p = NULL)
+	if (p != NULL)
 	{
 		if (p->left) postorder(p->left);
 		if (p->right) postorder(p->right);
@@ -276,7 +277,7 @@ int main()
 			break;
 		case 5: cout << " Enter data to be deleted : ";
 			cin >> tmp1;
-			b.remove(ch);
+			b.remove(tmp1);
 			break;
 		case 6: system("pause");
 			return 0;
